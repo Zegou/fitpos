@@ -1,0 +1,21 @@
+# This file is the entry point to configure your own HTTP routes.
+# Files in the routes/ subdirectory configure the routes for your dependencies.
+
+index:
+    path: /
+    defaults: { _controller: 'App\Controller\HomeController::index' }
+app_lucky_number:
+    path: /lucky/number
+    controller: App\Controller\LuckyController::number
+    
+# config/routes.yaml
+login:
+    path:       /login
+    controller: App\Controller\SecurityController::login    
+logout:
+    path:       /logout
+    controller: App\Controller\SecurityController::logout
+
+logout:
+    path:       /dashbord
+    controller: App\Controller\DashboardController::index

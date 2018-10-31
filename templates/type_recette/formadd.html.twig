@@ -1,0 +1,35 @@
+{% extends 'dashboard/index.html.twig' %}
+
+{% block title %} Formulaire de création des Types de recettes {% endblock %}
+
+{% block content %}
+    <div class="box">
+
+        <form ui-jp="parsley">
+            <div class="box">
+                <div class="box-header">
+                    <h2>Formulaire de création des Types de Recette </h2>
+                </div>
+                <div class="box-body">
+                    <div class="row m-b">
+                        <div class="col-sm-3">
+                            <label> Type de recette </label>
+                            <input type="text"  class="form-control" required>
+                        </div>
+                        <div class="col-sm-6">
+                            <label>Numero de compte</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="dker p-a text-right">
+                    <button type="submit" class="btn info">Valider</button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+{% endblock %}

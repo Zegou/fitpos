@@ -1,0 +1,35 @@
+{% extends 'dashboard/index.html.twig' %}
+
+{% block title %}Formulaire de Modification des Types de dépenses  {{ controller_name }}!{% endblock %}
+
+{% block content %}
+    <div class="box">
+
+        <form ui-jp="parsley" id="">
+            <div class="box">
+                <div class="box-header">
+                    <h2>Formulaire de Modification des Types de depense</h2>
+                </div>
+                <div class="box-body">
+                    <div class="row m-b">
+                        <div class="col-sm-3">
+                            <label> Type de depense </label>
+                            <input type="text" value="{{ TypeDepense.strTypeDepense }}" name="strTypeDepense" class="form-control" required>
+                        </div>
+                        <div class="col-sm-6">
+                            <label>Statut</label>
+                            <input type="text" value="{{ TypeDepense.strNumeroCompte }}" name="strNumeroCompte" class="form-control" required>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="dker p-a text-right">
+                    <button type="submit" class="btn info">Valider</button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+{% endblock %}

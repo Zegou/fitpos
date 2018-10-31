@@ -1,0 +1,38 @@
+{% extends 'dashboard/index.html.twig' %}
+
+{% block title %}Hello {{ controller_name }}!{% endblock %}
+
+{% block content %}
+    <div class="box">
+        <div class="box-header">
+            <h2><span> Type de Contenance    <a href='contenance/add' class="md-btn md-raised m-b-sm w-xs indigo">Ajouter</a></span></h2>
+        </div>
+        <div class="table-responsive">
+            <table ui-jp="dataTable" ui-options="{
+          sAjaxSource: '/api/contenance/list.json',
+          aoColumns: [
+            { mData: 'strTypeContenance' },
+            { mData: 'strStatut' },
+              { mData: 'dtCreated' },
+             { mData: 'stractionEDIT' },
+             { mData: 'stractionDELETE' }
+
+          ]
+        }"   class="table table-striped b-t b-b">
+                <thead>
+                <tr>
+                    <th  style="width:30%"> Type de Contenance </th>
+                    <th  style="width:25%">Statut</th>
+                    <th  style="width:25%">Date de création</th>
+
+                    <th  style="width:15%">act1</th>
+                    <th  style="width:15%">act2</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'dashboard/index.html.twig' %}
+
+{% block title %}Formulaire de configuration des Types de  Contenance  {{ controller_name }}!{% endblock %}
+
+{% block content %}
+    <div class="box">
+
+        <form ui-jp="parsley">
+            <div class="box">
+                <div class="box-header">
+                    <h2>Formulaire de configuration des Types Contenance</h2>
+                </div>
+                <div class="box-body">
+                    <div class="row m-b">
+                        <div class="col-sm-3">
+                            <label> Type de contenance </label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dker p-a text-right">
+                <button type="submit" class="btn info">Valider</button>
+            </div>
+
+        </form>
+
+    </div>
+{% endblock %}

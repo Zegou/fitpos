@@ -1,0 +1,78 @@
+{% extends 'dashboard/index.html.twig' %}
+
+{% block title %}Hello {{ controller_name }}!{% endblock %}
+
+{% block content %}
+    <div class="box">
+        <form ui-jp="parsley">
+            <div class="box">
+                <div class="box-header">
+                    <h2>Register</h2>
+                </div>
+                <div class="box-body">
+                    <p class="text-muted">Please fill the information to continue</p>
+                    <div class="row m-b">
+              <div class="col-sm-6">
+                <label>First Name</label>
+                <input type="text" class="form-control" required>   
+              </div>
+              <div class="col-sm-6">
+                <label>Last Name</label>
+                <input type="text" class="form-control" required>      
+              </div>   
+            </div>
+                    
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" class="form-control" value="{{ TUser.strLogin|trans }}" required>                        
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" class="form-control" required>                        
+                    </div>
+                    <div class="row m-b">
+                        <div class="col-sm-6">
+                            <label>Enter password</label>
+                            <input type="password" class="form-control" required id="pwd">   
+                        </div>
+                        <div class="col-sm-6">
+                            <label>Confirm password</label>
+                            <input type="password" class="form-control" data-parsley-equalto="#pwd" required>      
+                        </div>   
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="number" class="form-control" placeholder="XXX XXXX XXX" required>
+                    </div>
+                    <div class="checkbox">
+                        <select required class="form-control c-select m-y">
+                            <option value="">Please choose Language</option>
+                            {% for OTLanguage in TLanguage %}       
+                                <option value="{{ (OTLanguage.lgLanguageId)}}">{{ (OTLanguage.strDescription)}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="checkbox">
+                        <select required class="form-control c-select m-y">
+                            <option value="">Please choose Language</option>
+                            {% for OTRole in TRole %}
+                                <option value="{{ (OTRole.lgRoleId)}}">{{ (OTRole.strDescription)}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="checkbox">
+                        <label class="ui-check">
+                            <input type="checkbox" name="check" checked required="true"><i></i> I agree to the <a href="#" class="text-info">Terms of Service</a>
+                        </label>
+                    </div>
+                </div>
+
+
+                <div class="dker p-a text-right">
+                    <button type="submit" class="btn info">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}

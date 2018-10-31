@@ -1,0 +1,51 @@
+{% extends 'dashboard/index.html.twig' %}
+
+{% block title %}Liste des Types de dépenses {% endblock %}
+
+{% block content %}
+    <div class="box">
+        <div class="box-header">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-6">
+                        <h2><span> Type de Depense    <a href='../type/depense/add' class="md-btn md-raised m-b-sm w-xs indigo">Ajouter</a></span></h2>
+
+                    </div>
+                    <div class="col-6 text-right">
+                        {% if message is defined %}
+                            Suppression éffectué avec succès
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="table-responsive">
+            <table ui-jp="dataTable" ui-options="{
+          sAjaxSource: '/api/depense/list.json',
+          aoColumns: [
+            { mData: 'strTypeDepense' },
+            { mData: 'strNumeroCompte' },
+              { mData: 'dtCreated' },
+             { mData: 'stractionEDIT' },
+             { mData: 'stractionDELETE' }
+
+          ]
+        }"   class="table table-striped b-t b-b">
+                <thead>
+                <tr>
+                    <th  style="width:30%"> Type de depense </th>
+                    <th  style="width:25%">Numéro de compte</th>
+                    <th  style="width:25%">Date de création</th>
+
+                    <th  style="width:15%">act1</th>
+                    <th  style="width:15%">act2</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
